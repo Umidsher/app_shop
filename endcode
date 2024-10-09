@@ -1,1 +1,16 @@
+    def log_pass():
+        f = open("login.txt", "rb")
+        a = pickle.load(f)
+        f.close()
+        if enter_login.get() in a:
+            if enter_password.get() == a[enter_login.get()]:
+                messagebox.showinfo("Succesfully logged in!","Salomaat!")
+            else:
+                messagebox.showerror('UPS!', "Login or password was wrong!")
 
+        else:
+            messagebox.showerror('UPS!', "Login was wrong!")
+
+registration()
+
+root.mainloop()
