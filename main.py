@@ -1,5 +1,5 @@
 def get_products():
-    # Dictionary to store product name as key and price as value
+
     products = {
         'Laptop': 1200,
         'Smartphone': 800,
@@ -13,11 +13,11 @@ def get_products():
     return products
 
 def display_products():
-    # Retrieve products from the function
+
     products = get_products()
     print("\nAvailable Products and Prices:")
     for product, price in products.items():
-        print(f"{product}: ${price:.2f}")  # Format price to 2 decimal places
+        print(f"{product}: ${price:.2f}")
 
 def login():
     user_data = {
@@ -45,11 +45,11 @@ if __name__ == "__main__":
 cart = {}
 
 def add_to_cart(product, quantity):
-    if product in get_products():  # Check if the product is available
+    if product in get_products():
         if product in cart:
-            cart[product] += quantity  # Update existing quantity
+            cart[product] += quantity
         else:
-            cart[product] = quantity  # Add new product with quantity
+            cart[product] = quantity
         print(f"Added {quantity} of {product} to the cart.")
     else:
         print("Product not available.")
