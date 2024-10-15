@@ -1,7 +1,0 @@
-    def save():
-        login_pass_save = {}
-        login_pass_save[register_lodin.get()]=register_password1.get()
-        f = open("login.txt", "wb")
-        pickle.dump(login_pass_save, f)
-        f.close()
-        login()
