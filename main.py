@@ -1,5 +1,7 @@
-def get_products():
+from login import login
 
+
+def get_products():
     products = {
         'Laptop': 1200,
         'Smartphone': 800,
@@ -12,26 +14,13 @@ def get_products():
     }
     return products
 
-def display_products():
 
+def display_products():
     products = get_products()
     print("\nAvailable Products and Prices:")
     for product, price in products.items():
         print(f"{product}: ${price:.2f}")
 
-def login():
-    user_data = {
-        'Umidsher': 'Usbekistan1991',
-        'ProjectX': 'app_shop'
-    }
-    username = input("Enter username: ")
-    password = input("Enter password: ")
-
-    if username in user_data and user_data[username] == password:
-        return True
-    else:
-        print("Invalid username or password.")
-        return False
 
 def main():
     if login():
@@ -39,10 +28,12 @@ def main():
     else:
         print("Failed to log in. Please try again.")
 
+
 if __name__ == "__main__":
     main()
 
 cart = {}
+
 
 def add_to_cart(product, quantity):
     if product in get_products():
@@ -71,6 +62,7 @@ def show_products_and_add_to_cart():
     else:
         print("Invalid product selection.")
 
+
 def main():
     if login():
         display_products()
@@ -79,11 +71,14 @@ def main():
             continue_shopping = input("Do you want to continue shopping? (yes/no): ")
             if continue_shopping.lower() != 'yes':
                 break
+        # tax_rate = 6
+        # tax = round(tax_rate/100.0*(get_products.value), 2)
         print("\nYour cart:")
         for product, quantity in cart.items():
             print(f"{product}: {quantity}")
     else:
         print("Failed to log in. Please try again.")
+
 
 if __name__ == "__main__":
     main()
